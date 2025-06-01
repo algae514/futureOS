@@ -1001,13 +1001,10 @@
                         
                         console.log('Submitting data:', data);
                         
-                        // Submit to Google Apps Script as JSON
+                        // Submit to Google Apps Script as FormData (preferred method)
                         const response = await fetch(scriptURL, {
                             method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json',
-                            },
-                            body: JSON.stringify(data)
+                            body: formData  // Send FormData directly
                         });
                         
                         const result = await response.text();
