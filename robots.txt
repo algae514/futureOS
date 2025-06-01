@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://futureos.github.io/sitemap.xml
+
+# Optional: Block access to certain files if needed
+# Disallow: /private/
+# Disallow: *.pdf$
+
+# Crawl-delay (optional, in seconds)
+Crawl-delay: 1
