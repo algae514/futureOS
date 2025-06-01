@@ -376,6 +376,311 @@
             }
         }
 
+        /* Registration Section */
+        .registration {
+            padding: 80px 0;
+            background: #f8fafc;
+        }
+
+        .registration-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .registration-header h2 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #2c3e50;
+        }
+
+        .registration-header h2 .highlight {
+            color: #667eea;
+        }
+
+        .registration-description {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .registration-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .registration-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-icon {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .info-icon i {
+            font-size: 1.5rem;
+            color: white;
+        }
+
+        .info-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .info-card p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .registration-form-container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .form-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .form-header p {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #374151;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .checkbox-group {
+            margin: 1.5rem 0;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: normal;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .checkbox-label:hover {
+            background-color: #f3f4f6;
+        }
+
+        .checkbox-label input[type="checkbox"] {
+            width: auto;
+            margin: 0;
+            accent-color: #667eea;
+        }
+
+        .form-actions {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .btn-register {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+        }
+
+        .btn-register:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-register:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .form-note {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .form-note p {
+            color: #666;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .form-note i {
+            color: #10b981;
+        }
+
+        /* Form Loading State */
+        .form-loading {
+            position: relative;
+            pointer-events: none;
+        }
+
+        .form-loading::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            z-index: 10;
+        }
+
+        /* Success/Error Messages */
+        .success-message {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .error-message {
+            background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        @media (max-width: 1024px) {
+            .registration-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .registration-info {
+                order: 2;
+            }
+
+            .registration-form-container {
+                order: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .registration-header h2 {
+                font-size: 2.2rem;
+            }
+
+            .registration-info {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .registration-form-container {
+                padding: 2rem;
+            }
+
+            .form-header h3 {
+                font-size: 1.5rem;
+            }
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 0 15px;
@@ -411,6 +716,18 @@
 
             .trust-number {
                 font-size: 2.5rem;
+            }
+
+            .registration-header h2 {
+                font-size: 1.8rem;
+            }
+
+            .registration-form-container {
+                padding: 1.5rem;
+            }
+
+            .info-card {
+                padding: 1.5rem;
             }
         }
     </style>
@@ -537,7 +854,202 @@
         </div>
     </section>
 
+    <!-- Registration Section -->
+    <section id="register" class="registration">
+        <div class="container">
+            <div class="registration-header">
+                <h2>Register for <span class="highlight">Free FDP</span></h2>
+                <p class="registration-description">Join our Faculty Development Program on Generative AI. Limited seats available!</p>
+            </div>
+            <div class="registration-content">
+                <div class="registration-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Duration</h3>
+                        <p>6 Hours of Intensive Training</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <h3>Schedule</h3>
+                        <p>Next Month - Exact Date TBA</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Format</h3>
+                        <p>Interactive Online Sessions</p>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Certificate</h3>
+                        <p>Official FDP Completion Certificate</p>
+                    </div>
+                </div>
+                <div class="registration-form-container">
+                    <form id="registrationForm" class="registration-form">
+                        <div class="form-header">
+                            <h3>Register Now</h3>
+                            <p>Fill in your details to secure your spot</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="institution">Institution/Organization</label>
+                            <input type="text" id="institution" name="institution" placeholder="Enter your institution name">
+                        </div>
+                        <div class="form-group">
+                            <label for="designation">Designation</label>
+                            <select id="designation" name="designation">
+                                <option value="">Select your designation</option>
+                                <option value="Professor">Professor</option>
+                                <option value="Associate Professor">Associate Professor</option>
+                                <option value="Assistant Professor">Assistant Professor</option>
+                                <option value="Lecturer">Lecturer</option>
+                                <option value="Research Scholar">Research Scholar</option>
+                                <option value="Student">Student</option>
+                                <option value="Industry Professional">Industry Professional</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="experience">AI/ML Experience Level</label>
+                            <select id="experience" name="experience">
+                                <option value="">Select your experience level</option>
+                                <option value="Beginner">Beginner (No prior experience)</option>
+                                <option value="Intermediate">Intermediate (Some knowledge)</option>
+                                <option value="Advanced">Advanced (Experienced)</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="expectations">What do you hope to learn? (Optional)</label>
+                            <textarea id="expectations" name="expectations" rows="3" placeholder="Brief description of your learning goals"></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" name="newsletter" value="yes">
+                                Subscribe to our newsletter for AI education updates
+                            </label>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-register">
+                                <i class="fas fa-user-plus"></i>
+                                Register for Free FDP
+                            </button>
+                        </div>
+                        <div class="form-note">
+                            <p><i class="fas fa-shield-alt"></i> Your information is secure and will only be used for this program.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <script>
+        // Google Apps Script URL for form submission
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbwWqXG8NyikbCKTKpP2Qvug4RiYZb-FkQOElIqDJ_7EFoLqpjcqYF4LMIBKIGq-77MrXw/exec';
+
+        // Registration form handling
+        document.addEventListener('DOMContentLoaded', function() {
+            const registrationForm = document.getElementById('registrationForm');
+            
+            if (registrationForm) {
+                registrationForm.addEventListener('submit', async function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = this.querySelector('.btn-register');
+                    const originalText = submitBtn.innerHTML;
+                    
+                    // Show loading state
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Registering...';
+                    this.classList.add('form-loading');
+                    
+                    // Remove any existing messages
+                    const existingMessages = this.querySelectorAll('.success-message, .error-message');
+                    existingMessages.forEach(msg => msg.remove());
+                    
+                    try {
+                        // Collect form data
+                        const formData = new FormData(this);
+                        const data = {};
+                        
+                        // Convert FormData to object
+                        for (let [key, value] of formData.entries()) {
+                            data[key] = value;
+                        }
+                        
+                        // Add timestamp
+                        data.timestamp = new Date().toISOString();
+                        
+                        // Submit to Google Apps Script
+                        const response = await fetch(scriptURL, {
+                            method: 'POST',
+                            body: formData
+                        });
+                        
+                        if (response.ok) {
+                            // Show success message
+                            showMessage(this, '✅ Registration successful! We will contact you soon with more details.', 'success');
+                            
+                            // Reset form
+                            this.reset();
+                            
+                            // Scroll to top of form to show success message
+                            this.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            
+                        } else {
+                            throw new Error('Network response was not ok');
+                        }
+                        
+                    } catch (error) {
+                        console.error('Error:', error);
+                        showMessage(this, '❌ Something went wrong. Please try again or contact us directly.', 'error');
+                    } finally {
+                        // Reset button state
+                        submitBtn.disabled = false;
+                        submitBtn.innerHTML = originalText;
+                        this.classList.remove('form-loading');
+                    }
+                });
+            }
+        });
+        
+        // Function to show messages
+        function showMessage(form, message, type) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = type === 'success' ? 'success-message' : 'error-message';
+            messageDiv.innerHTML = message;
+            
+            // Insert at the beginning of the form
+            const formHeader = form.querySelector('.form-header');
+            formHeader.insertAdjacentElement('afterend', messageDiv);
+            
+            // Auto-hide after 8 seconds
+            setTimeout(() => {
+                if (messageDiv.parentNode) {
+                    messageDiv.remove();
+                }
+            }, 8000);
+        }
+
         // Smooth scrolling for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -561,6 +1073,43 @@
                 header.style.background = 'rgba(255, 255, 255, 0.95)';
             }
         });
+        
+        // Form validation enhancements
+        document.addEventListener('DOMContentLoaded', function() {
+            const formInputs = document.querySelectorAll('#registrationForm input, #registrationForm select, #registrationForm textarea');
+            
+            formInputs.forEach(input => {
+                // Add real-time validation feedback
+                input.addEventListener('blur', function() {
+                    if (this.hasAttribute('required') && !this.value.trim()) {
+                        this.style.borderColor = '#ef4444';
+                    } else if (this.type === 'email' && this.value && !isValidEmail(this.value)) {
+                        this.style.borderColor = '#ef4444';
+                    } else if (this.type === 'tel' && this.value && !isValidPhone(this.value)) {
+                        this.style.borderColor = '#ef4444';
+                    } else {
+                        this.style.borderColor = '#10b981';
+                    }
+                });
+                
+                // Reset border on focus
+                input.addEventListener('focus', function() {
+                    this.style.borderColor = '#667eea';
+                });
+            });
+        });
+        
+        // Email validation
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        // Phone validation (basic)
+        function isValidPhone(phone) {
+            const phoneRegex = /^[\+]?[1-9][\d]{9,14}$/;
+            return phoneRegex.test(phone.replace(/[\s\-\(\)]/g, ''));
+        }
     </script>
 </body>
 </html>
