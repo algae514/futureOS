@@ -10,6 +10,7 @@ A modern, responsive website for FUTUREOS ENTERPRISES PRIVATE LIMITED, an AI edu
 - **Mobile Navigation**: Hamburger menu for mobile devices
 - **Call-to-Action Buttons**: Interactive buttons for workshop bookings and ambassador applications
 
+
 ## 📁 Project Structure
 
 ```
