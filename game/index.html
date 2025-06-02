@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillRack Gaming Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>🎮 SkillRack Gaming Platform</h1>
+            <div class="user-info">
+                <input type="text" id="playerName" placeholder="Enter your name" maxlength="20">
+                <button onclick="setPlayerName()">Set Name</button>
+                <span id="currentPlayer">Player: Guest</span>
+            </div>
+        </header>
+
+        <!-- Game Selection Menu -->
+        <div id="gameMenu" class="game-selection">
+            <h2>Choose Your Game</h2>
+            <div class="game-cards">
+                <div class="game-card" onclick="startGame('quiz')">
+                    <div class="game-icon">🧠</div>
+                    <h3>Quiz Game</h3>
+                    <p>Choose the correct answer from multiple choices</p>
+                    <span class="game-timer">⏱️ 45 seconds per question</span>
+                </div>
+                <div class="game-card" onclick="startGame('match')">
+                    <div class="game-icon">🔗</div>
+                    <h3>Match It</h3>
+                    <p>Match the left column items with the right column</p>
+                    <span class="game-timer">⏱️ 120 seconds</span>
+                </div>
+            </div>
+            <button class="leaderboard-btn" onclick="showLeaderboard()">
+                🏆 View Leaderboard
+            </button>
+        </div>
+
+        <!-- Quiz Game -->
+        <div id="quizGame" class="game-container" style="display: none;">
+            <div class="game-header">
+                <h2>🧠 Quiz Game</h2>
+                <div class="game-controls">
+                    <div class="timer-display">
+                        Time: <span id="quizTimer">45</span>s
+                    </div>
+                    <div class="score-display">
+                        Score: <span id="quizScore">0</span>
+                    </div>
+                </div>
+                <div class="control-buttons">
+                    <button id="quizStart" onclick="startQuiz()">Start</button>
+                    <button id="quizStop" onclick="stopQuiz()" disabled>Stop</button>
+                    <button id="quizReplay" onclick="replayQuiz()" disabled>Replay</button>
+                    <button onclick="backToMenu()">Back to Menu</button>
+                </div>
+            </div>
+            
+            <div class="game-content">
+                <div id="quizQuestion" class="question-container">
+                    <div class="question-timer-info">
+                        🕐 <span id="currentQuestionTimer">45</span>s remaining for this question
+                    </div>
+                    <h3 id="questionText">Click Start to begin!</h3>
+                    <div id="quizOptions" class="options-container">
+                        <!-- Options will be populated by JavaScript -->
+                    </div>
+                </div>
+                <div class="progress-bar">
+                    <div id="quizProgress" class="progress-fill"></div>
+                </div>
+                <div class="question-counter">
+                    Question <span id="currentQuestionNum">0</span> of <span id="totalQuestions">10</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Match It Game -->
+        <div id="matchGame" class="game-container" style="display: none;">
+            <div class="game-header">
+                <h2>🔗 Match It Game</h2>
+                <div class="game-controls">
+                    <div class="timer-display">
+                        Time: <span id="matchTimer">120</span>s
+                    </div>
+                    <div class="score-display">
+                        Score: <span id="matchScore">0</span>
+                    </div>
+                </div>
+                <div class="control-buttons">
+                    <button id="matchStart" onclick="startMatch()">Start</button>
+                    <button id="matchStop" onclick="stopMatch()" disabled>Stop</button>
+                    <button id="matchReplay" onclick="replayMatch()" disabled>Replay</button>
+                    <button onclick="backToMenu()">Back to Menu</button>
+                </div>
+            </div>
+            
+            <div class="game-content">
+                <div class="progress-indicator" id="matchProgress">
+                    <div class="progress-item" id="matchesProgress">
+                        <span class="progress-icon">🔗</span>
+                        <span>Matches: <span id="matchesCount">0/5</span></span>
+                    </div>
+                    <div class="progress-item" id="overallProgress">
+                        <span class="progress-icon">🎯</span>
+                        <span>Overall: <span id="overallCount">0/5</span></span>
+                    </div>
+                </div>
+                
+                <div class="match-section">
+                    <h3>Match the Following:</h3>
+                    <div class="match-container">
+                        <div class="match-left" id="matchLeft">
+                            <!-- Left items will be populated by JavaScript -->
+                        </div>
+                        <div class="match-right" id="matchRight">
+                            <!-- Right items will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="submit-section" id="matchSubmitSection" style="display: none;">
+                    <button id="submitMatchButton" class="submit-btn" onclick="stopMatch()">
+                        🏁 Submit Game
+                    </button>
+                    <p class="submit-hint">Complete all matches for auto-submit!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaderboard -->
+        <div id="leaderboard" class="leaderboard-container" style="display: none;">
+            <div class="leaderboard-header">
+                <h2>🏆 Leaderboard</h2>
+                <div class="leaderboard-controls">
+                    <button onclick="clearLeaderboard()">Clear All Scores</button>
+                    <button onclick="backToMenu()">Back to Menu</button>
+                </div>
+            </div>
+            <div class="leaderboard-content">
+                <div class="leaderboard-stats">
+                    <div class="stat-card">
+                        <h4>Total Players</h4>
+                        <span id="totalPlayers">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Games Played</h4>
+                        <span id="totalGames">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <h4>Highest Score</h4>
+                        <span id="highestScore">0</span>
+                    </div>
+                </div>
+                <div class="leaderboard-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Rank</th>
+                                <th>Player Name</th>
+                                <th>Total Score</th>
+                                <th>Games Played</th>
+                                <th>Avg Score</th>
+                                <th>Best Game</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardBody">
+                            <!-- Leaderboard entries will be populated by JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Over Modal -->
+        <div id="gameOverModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h2>🎉 Game Over!</h2>
+                <div id="gameOverStats">
+                    <!-- Game over statistics will be populated by JavaScript -->
+                </div>
+                <div class="modal-buttons">
+                    <button onclick="playAgain()">Play Again</button>
+                    <button onclick="showLeaderboard()">View Leaderboard</button>
+                    <button onclick="backToMenu()">Main Menu</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
